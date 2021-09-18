@@ -75,5 +75,12 @@ namespace EduHome.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+        public async Task<IActionResult> LogOut()
+        {
+            await _SignInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+       
+
     }
 }
