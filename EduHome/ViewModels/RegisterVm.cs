@@ -18,7 +18,7 @@ namespace EduHome.ViewModels
         public string Email { get; set; }
         [Required,DataType(DataType.Password)]
         public string Password { get; set; }
-        [Required,DataType(DataType.Password),Compare(nameof(Password))]
+        [Required,DataType(DataType.Password),Compare(nameof(Password),ErrorMessage ="Confirm Password or Password isn't true...")]
         public string ConfirmPassword { get; set; }
     }
 }

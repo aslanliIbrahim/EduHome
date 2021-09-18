@@ -33,7 +33,7 @@ namespace EduHome
             {
                 options.UseSqlServer(_config["ConnectionStrings:Default"]);
             });
-            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>(); 
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
