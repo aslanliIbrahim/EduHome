@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace EduHome.Models
 {
-    public class Blog
+    public class Contact
     {
         public int Id { get; set; }
         public string Image { get; set; }
-        public string Title { get; set; }
-
+        public string Adress { get; set; }
     }
 }

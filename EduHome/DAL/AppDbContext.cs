@@ -14,8 +14,10 @@ namespace EduHome.DAL
         {
         }
 
+        public DbSet<Sms> sms { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<AboutUs> about { get; set; }
+        public DbSet<Contact> contacts { get; set; }
     }
 }

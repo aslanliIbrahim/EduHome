@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EduHome.ViewModels
 {
-    public class HomeVM
+    public class ContactVM
     {
+        public Contact contacts { get; set; }
         public List<Slide> Slides { get; set; }
         public Setting Settings { get; set; }
         public AboutUs about { get; set; }
-        public List<Sms> sms { get; set; }
     }
 }

@@ -22,8 +22,8 @@ namespace EduHome.Controllers
             {
                 Slides = await _context.Slides.ToListAsync(),
                 Settings = _context.Settings.FirstOrDefault(),
-                about = _context.about.FirstOrDefault()
-               
+                about = _context.about.FirstOrDefault(),
+                
             };
            
             return View();
