@@ -9,5 +9,6 @@ namespace EduHome.Models
     public class AppUser:IdentityUser
     {
         public string FullName { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }

@@ -18,5 +18,6 @@ namespace EduHome.ViewModels
         [Required, StringLength(maximumLength: 500)]
         public string Message { get; set; }
         public Contact Contact { get; set; }
+        
     }
 }

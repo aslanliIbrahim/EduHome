@@ -12,5 +12,6 @@ namespace EduHome.ViewModels
         public Setting Settings { get; set; }
         public AboutUs about { get; set; }
         public List<Sms> sms { get; set; }
+        
     }
 }

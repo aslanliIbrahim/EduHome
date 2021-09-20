@@ -26,10 +26,11 @@ namespace EduHome.Controllers
                 Slides = await _context.Slides.ToListAsync(),
                 Settings =  _context.Settings.FirstOrDefault(),
                 about = _context.about.FirstOrDefault(),
-                contacts = _context.contacts.FirstOrDefault()
+                contacts = _context.contacts.FirstOrDefault(),
+                
             };
 
-            return View();
+            return View(contactVM);
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
@@ -42,7 +43,7 @@ namespace EduHome.Controllers
                 Name = contactSmsVM.Name,
                 Email = contactSmsVM.Email,
                 Subject = contactSmsVM.Subject,
-                Message = contactSmsVM.Message
+                Message = contactSmsVM.Message,
             };
             await _context.sms.AddAsync(contact);
             await _context.SaveChangesAsync();

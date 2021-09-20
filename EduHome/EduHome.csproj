@@ -11,6 +11,12 @@
     <Compile Remove="Migrations\20210916092810_RenameHeadLogoToSetting.Designer.cs" />
     <Compile Remove="Migrations\20210916092943_RenameHeaderLogoToSetting.cs" />
     <Compile Remove="Migrations\20210916092943_RenameHeaderLogoToSetting.Designer.cs" />
+    <Compile Remove="Migrations\20210919164138_CreateBlog.cs" />
+    <Compile Remove="Migrations\20210919164138_CreateBlog.Designer.cs" />
+    <Compile Remove="Migrations\20210919170301_CreateBlogCard.cs" />
+    <Compile Remove="Migrations\20210919170301_CreateBlogCard.Designer.cs" />
+    <Compile Remove="Migrations\20210920064419_CreateBlog.cs" />
+    <Compile Remove="Migrations\20210920064419_CreateBlog.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

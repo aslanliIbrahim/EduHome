@@ -1,4 +1,4 @@
-﻿@model ContactSmsVM
+﻿@model ContactVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -38,32 +38,32 @@
                 <div class="contact-contents text-center">
                     <div class="single-contact mb-65">
                         <div class="contact-icon">
-                            <img src="img/contact/@Model.Contact.Image" alt="contact">
+                            <img src="@Model.Settings.Image" alt="contact">
                         </div>
                         <div class="contact-add">
                             <h3>address</h3>
-                            <p>@Model.Contact.Adress</p>
-                            <p>@Model.Contact.Adress</p>
+                            <p>@Model.Settings.Adress</p>
+                            <p>@Model.Settings.Adress</p>
                         </div>
                     </div>
                     <div class="single-contact mb-65">
                         <div class="contact-icon">
-                            <img src="img/contact/@Model.Contact.Image" alt="contact">
+                            <img src="img/contact/@Model.Settings.Image" alt="contact">
                         </div>
-                        <div class="contact-add">
+                        <div class="contact-add">q
                             <h3>address</h3>
-                            <p>@Model.Contact.Adress</p>
-                            <p>@Model.Contact.Adress</p>
+                            <p>@Model.Settings.Adress</p>
+                            <p>@Model.Settings.Adress</p>
                         </div>
                     </div>
                     <div class="single-contact">
                         <div class="contact-icon">
-                            <img src="img/contact/@Model.Contact.Image" alt="contact">
+                            <img src="img/contact/@Model.Settings.Image" alt="contact">
                         </div>
                         <div class="contact-add">
                             <h3>address</h3>
-                            <p>@Model.Contact.Image</p>
-                            <p>@Model.Contact.Image</p>
+                            <p>@Model.Settings.Image</p>
+                            <p>@Model.Settings.Image</p>
                         </div>
                     </div>
                 </div>
@@ -79,15 +79,15 @@
                         <div class="row">
                             <div class="col-md-12">
                                 
-                                <input asp-for="Name"  placeholder="Name">
+                                <input asp-for="@Model.Name"  placeholder="Name">
                             </div>
                             <div class="col-md-12">
                                 
-                                <input asp-for="Email"  placeholder="Email">
+                                <input asp-for="@Model.Email"  placeholder="Email">
                             </div>
                             <div class="col-md-12">
                                 
-                                <input asp-for="Subject" placeholder="Subject">
+                                <input asp-for="@Model.Subject" placeholder="Subject">
                                
                                 <textarea asp-for="Message"  cols="15" rows="10" placeholder="message"></textarea>
                             </div>

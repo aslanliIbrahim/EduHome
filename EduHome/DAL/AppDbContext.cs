@@ -19,5 +19,6 @@ namespace EduHome.DAL
         public DbSet<Setting> Settings { get; set; }
         public DbSet<AboutUs> about { get; set; }
         public DbSet<Contact> contacts { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }
