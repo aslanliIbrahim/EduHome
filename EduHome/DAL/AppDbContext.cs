@@ -20,5 +20,12 @@ namespace EduHome.DAL
         public DbSet<AboutUs> about { get; set; }
         public DbSet<Contact> contacts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<TeacherSkill> TeacherSkills { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Spekear> Spekears { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<NoticeBoard> NoticeBoards  { get; set; }
     }
 }

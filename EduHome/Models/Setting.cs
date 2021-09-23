@@ -18,9 +18,6 @@ namespace EduHome.Models
         public string Adress { get; set; }
         [Required, StringLength(255)]
         public string Video { get; set; }
-        [Required, StringLength(20)]
-        public string DateTime { get; set; }
-        [Required,StringLength(255)]
-        public string Letter { get; set; }
+        
     }
 }

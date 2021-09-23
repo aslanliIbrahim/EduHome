@@ -23,10 +23,10 @@ namespace EduHome.Controllers
                 Slides = await _context.Slides.ToListAsync(),
                 Settings = _context.Settings.FirstOrDefault(),
                 about = _context.about.FirstOrDefault(),
-                
+                Courses = _context.Courses.ToList(),
+                Blogs = _context.Blogs.Include(b=>b.AppUser).ToList()
             };
-           
-            return View();
+            return View(homevm);
         }
     }
 }

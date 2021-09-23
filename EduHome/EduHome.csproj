@@ -17,6 +17,10 @@
     <Compile Remove="Migrations\20210919170301_CreateBlogCard.Designer.cs" />
     <Compile Remove="Migrations\20210920064419_CreateBlog.cs" />
     <Compile Remove="Migrations\20210920064419_CreateBlog.Designer.cs" />
+    <Compile Remove="Migrations\20210920100826_CreateTeacher.cs" />
+    <Compile Remove="Migrations\20210920100826_CreateTeacher.Designer.cs" />
+    <Compile Remove="Migrations\20210920121658_CreateTeacherDetails.cs" />
+    <Compile Remove="Migrations\20210920121658_CreateTeacherDetails.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
