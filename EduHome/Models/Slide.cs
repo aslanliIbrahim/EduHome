@@ -14,7 +14,7 @@ namespace EduHome.Models
         [Required, StringLength(255)]
         public string Image { get; set; }
         [NotMapped, Required]
-        public List<IFormFile> Photos { get; set; }
+        public IFormFile Photos { get; set; }
         [Required,StringLength(255)]
         public string Title { get; set; }
         [Required, StringLength(255)]
