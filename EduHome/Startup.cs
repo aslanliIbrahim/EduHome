@@ -1,4 +1,4 @@
-using EduHome.DAL;
+ using EduHome.DAL;
 using EduHome.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -48,12 +48,12 @@ namespace EduHome
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute
-                (
-                    name:"Area",
-                    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
-                );
-                endpoints.MapControllerRoute
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=DashBoard}/{action=Index}/{id?}"
+                ); 
+
+               endpoints.MapControllerRoute
                 (
                     "default",
                     "{controller=Home}/{action=Index}/{Id?}"
