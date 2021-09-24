@@ -102,5 +102,16 @@ namespace EduHome.Areas.AdminPanel.Controllers
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Delete(int? id)
+        {
+            var slider = _context.Slides.FirstOrDefault(sl=>sl.Id == id);
+            _context.Slides.Remove(slider);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
     }
+
+
+    
 }
