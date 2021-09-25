@@ -1,8 +1,10 @@
-﻿@model List<Blog>
+﻿@model IPagedList<Blog>
 @{
     ViewData["Title"] = "Index";
 }
 
+@using PagedList.Mvc;
+@using PagedList;
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
     <div class="banner-area text-center">
@@ -30,7 +32,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-blog mb-60">
                         <div class="blog-img">
-                            <a asp-action="Details" asp-controller="Blog" asp-route-id="@item.Id" ><img src="~/img/blog/@item.Image" alt="blog"></a>
+                            <a asp-action="Details" asp-controller="Blog" asp-route-id="@item.Id"><img src="~/img/blog/@item.Image" alt="blog"></a>
                             <div class="blog-hover">
                                 <i class="fa fa-link"></i>
                             </div>
@@ -50,36 +52,23 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <div class="pagination">
-                    <ul>
-                        @for (int i = 1; i <=ViewBag.PageCount; i++)
-                        {
-                            if (ViewBag.Page == null)
-                            {
+               
+                        @Html.PagedListPager(Model.Blogs, number => Url.Action("Index", "Blog", new { number }))
+                    
+                @*<div class="pagination">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().AppUser.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().DateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Title)
 
-                                if (i == 1)
-                                {
-                                    <li style="pointer-events:none"><a class="disabled" href="/../Models/Blog/Index?page=@i">@i</a></li>
-                                }
-                                else
-                                {
-                                    <li><a href="/Blog/Index?page=@i">@i</a></li>
-                                }
-                            }
-                            else
-                            {
-                                if (i == ViewBag.Page)
-                                {
-                                    <li style="pointer-events:none"><a class="disabled" href="/../Models/Blog/Index?page=@i">@i</a></li>
-                                }
-                                else
-                                {
-                                    <li><a href="/../Models/Blog/Index?page=@i">@i</a></li>
-                                }
-                            }
-                        }
-                    </ul>
-                </div>
+                </th>
+            </tr>
+        </div>*@
             </div>
         </div>
     </div>

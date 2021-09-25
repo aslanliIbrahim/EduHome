@@ -51,12 +51,17 @@ namespace EduHome.Areas.AdminPanel.Controllers
                 ModelState.AddModelError("photo", "please enter image where less then 5000kb");
                 return View();
             }
+            if (ModelState["Email"].ValidationState == ModelValidationState.Invalid)
+            {
+                ModelState.AddModelError("email", "please enter email...");
+            }
             string filename = Guid.NewGuid().ToString() + setting.Photo.FileName;
             string resulpath = Path.Combine(_env.WebRootPath, "img", "logo", filename);
             using (FileStream filestream = new FileStream(resulpath, FileMode.Create))
             {
                 await setting.Photo.CopyToAsync(filestream);
             }
+            
             setting.Image = filename;
             _context.Settings.Add(setting);
             await _context.SaveChangesAsync();

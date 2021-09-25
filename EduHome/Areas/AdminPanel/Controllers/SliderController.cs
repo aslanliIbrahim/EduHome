@@ -29,7 +29,7 @@ namespace EduHome.Areas.AdminPanel.Controllers
             IEnumerable<Slide> slides = _context.Slides.ToList();
             
             return View(slides);
-        }
+        }   
 
         public IActionResult Create()
         {
@@ -43,7 +43,7 @@ namespace EduHome.Areas.AdminPanel.Controllers
             //if (!ModelState.IsValid) return View();
             if (ModelState["Photos"].ValidationState == ModelValidationState.Invalid)
             {
-                return View();
+                return NotFound();
             }
             
             if (!slide.Photos.ContentType.Contains("image/"))   

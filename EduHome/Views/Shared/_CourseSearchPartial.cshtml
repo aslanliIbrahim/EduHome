@@ -1,0 +1,9 @@
+﻿@model List<Course>
+@foreach (var course in Model)
+{
+    <li class="d-flex">
+        <a href="../Views/Course/Detail.cshtml/@course.Id">
+            @course.Title
+        </a>
+    </li>
+}

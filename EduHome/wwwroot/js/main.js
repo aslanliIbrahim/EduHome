@@ -1,3 +1,18 @@
+$("#input-search").keyup(function () {
+    var search = $(this).val().trim();
+
+    var url = `Home/Search?search=${search}`;
+    $(".search-product").remove();
+    if (search.trim() != "") {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                $(this).parent().append(data)
+                console.log(data)
+            })
+           
+    }
+})
 (function ($) {
 "use strict";  
     

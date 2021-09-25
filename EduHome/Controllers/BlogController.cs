@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PagedList.Mvc;
+using PagedList;
 
 namespace EduHome.Controllers
 {
@@ -17,21 +19,15 @@ namespace EduHome.Controllers
         {
             _context = context;
         }
-
-        public IActionResult Index()
+        public IActionResult Index(string search,int? i)
         {
-            List<Blog> blogs = _context.Blogs.Include(B=>B.AppUser).ToList();
-            
-
-            return View(blogs);
+            List<Blog> blogs = _context.Blogs.Include(B=>B.AppUser).ThenInclude(b=>b.UserName).ToList();
+            return View(blogs.OrderByDescending(b=>b.Id).ToList().ToPagedList(i ?? 1,3));
         }
-        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return View();
             var post = await _context.Blogs.Include(p => p.AppUser).FirstOrDefaultAsync();
-
-            
             return View(post);
         }
     }
