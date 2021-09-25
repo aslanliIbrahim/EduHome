@@ -23,5 +23,6 @@ namespace EduHome.Models
         public string AppUserId { get; set; }
         [NotMapped]
         public IFormFile Photo { get; set; }
+            
     }
 }

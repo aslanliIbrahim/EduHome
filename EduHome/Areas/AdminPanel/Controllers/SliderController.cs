@@ -96,7 +96,7 @@ namespace EduHome.Areas.AdminPanel.Controllers
             if (id != slide.Id) return BadRequest();
             var slideDb =  _context.Slides.FirstOrDefault(sl => sl.Id == id);
             if (slideDb == null) return NotFound();
-            slideDb.Image = slideDb.Image;
+            slideDb.Image = slide.Image;
             slideDb.Title = slide.Title;
             slideDb.Description = slide.Description;
             _context.SaveChanges();
