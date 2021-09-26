@@ -26,7 +26,7 @@ namespace EduHome.Controllers
             };
             return View(eventVM);
         }
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         
         {
             if (id == null) return NotFound();

@@ -35,12 +35,12 @@
                     <div class="event-details-content">
                         <h2>ADVANCE WED DEVELOPMENT WORKSHOP</h2>
                         <ul>
-                            <li><span>time : </span>9:30am - 4:45pm</li>
-                            <li><span>venue : </span>Cristal Centre, 254 New Yourk</li>
+                            <li><span>time : </span>@Model.Event.StartTime - @Model.Event.EndTime</li>
+                            <li><span>venue : </span>@Model.Event.Place</li>
                         </ul>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui </p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem </p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                        <p>@Model.Event.AboutMe</p>
+                        <p>@Model.Event.AboutMe</p>
+                        <p>@Model.Event.AboutMe</p>
                         <div class="speakers-area fix">
                             <h4>speakers</h4>
                             @if (Model.Event.Spekears.Count()  > 0)
@@ -105,18 +105,18 @@
                         <h3>categories</h3>
                        
                             <ul>
-                                <li><a href="#">ssjjsjshsjsj</a></li>
+                                <li><a href="#">Css</a></li>
                                 <li><a href="#">Political Science (12)</a></li>
                                 <li><a href="#">Micro Biology (08)</a></li>
                                 <li><a href="#">HTML5 &amp; CSS3 (15)</a></li>
                                 <li><a href="#">Web Design (20)</a></li>
                                 <li><a href="#">PHP (23)</a></li>
                             </ul>
-                        }
+                        
                     </div>
                     <div class="single-blog-widget mb-50">
                         <div class="single-blog-banner">
-                            <a href="blog-details.html" id="blog"><img src="img/blog/blog-img.jpg" alt="blog"></a>
+                            <a asp-action="details" asp-controller="blog"><img src="~/img/event/@Model.Event.Image" alt="blog"></a>
                             <h2>best<br> eductaion<br> theme</h2>
                         </div>
                     </div>
@@ -143,12 +143,12 @@
                     <div class="single-blog-widget">
                         <h3>tags</h3>
                         <div class="single-tag">
-                            <a href="blog-details.html" class="mr-10 mb-10">course</a>
-                            <a href="blog-details.html" class="mr-10 mb-10">education</a>
-                            <a href="blog-details.html" class="mb-10">teachers</a>
-                            <a href="blog-details.html" class="mr-10">learning</a>
-                            <a href="blog-details.html" class="mr-10">university</a>
-                            <a href="blog-details.html">events</a>
+                            <a asp-action="Details" asp-controller="Blog" class="mr-10 mb-10">course</a>
+                            <a asp-action="Details" asp-controller="Blog" class="mr-10 mb-10">education</a>
+                            <a asp-action="Details" asp-controller="Blog" class="mb-10">teachers</a>
+                            <a asp-action="Details" asp-controller="Blog" class="mr-10">learning</a>
+                            <a asp-action="Details" asp-controller="Blog" class="mr-10">university</a>
+                            <a asp-action="Details" asp-controller="Blog">events</a>
                         </div>
                     </div>
                 </div>
