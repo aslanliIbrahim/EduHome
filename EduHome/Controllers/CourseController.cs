@@ -36,5 +36,16 @@ namespace EduHome.Controllers
 
             return View(courseVM);
         }
+        [HttpPost]
+        public IActionResult Search(CourseVM coursevm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+            coursevm.Courses = _context.Courses.Where(cr => cr.Title.Contains(coursevm.Search)).ToList();
+            return View(nameof(Index),coursevm);
+        }
+
     }
 }

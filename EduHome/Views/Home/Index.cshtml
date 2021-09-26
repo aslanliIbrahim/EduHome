@@ -304,12 +304,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                
-                
-                <div class="single-blog">
-                    @foreach (var item in Model.Blogs.Take(3))
-                    {
+
+            @foreach (var item in Model.Blogs.Take(3))
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
                         <div class="blog-img">
                             <a asp-action="Details" asp-controller="Blog" asp-route-id="@item.Id"><img src="~/img/blog/@item.Image" alt="blog"></a>
                             <div class="blog-hover">
@@ -318,18 +317,18 @@
                         </div>
                         <div class="blog-content">
                             <div class="blog-top">
-                                <p>@item.AppUser.FullName /  @item.DateTime.ToString("MMM dd")  /  <i class="fa fa-comments-o"></i> 4</p>
+                                <p> /  @item.DateTime.ToString("MMM dd")  /  <i class="fa fa-comments-o"></i> 4</p>
                             </div>
                             <div class="blog-bottom">
                                 <h2><a href="~/blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
                                 <a asp-action="Details" asp-controller="Blog" asp-route-id="@item.Id">read more</a>
                             </div>
                         </div>
-                    }
+                    </div>
 
                 </div>
-                
-            </div>
+            }
+
         </div>
     </div>
 </div>

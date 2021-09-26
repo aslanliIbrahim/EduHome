@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
+@*@using X.Pagedlist*@
 @using PagedList.Mvc;
 @using PagedList;
 <!-- Banner Area Start -->
@@ -39,11 +40,11 @@
                         </div>
                         <div class="blog-content">
                             <div class="blog-top">
-                                <p>By @item.AppUser.UserName  / @item.DateTime  /  <i class="fa fa-comments-o"></i> 4</p>
+                                <p>By   / @item.DateTime  /  <i class="fa fa-comments-o"></i> 4</p>
                             </div>
                             <div class="blog-bottom">
                                 <h2><a href="blog-details.html"> @item.Title </a></h2>
-                                <a href="blog-details.html">read more</a>
+                                <a asp-action="Details" asp-controller="Blog" asp-route-id="@item.Id">read more</a>
                             </div>
                         </div>
                     </div>
@@ -52,23 +53,23 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-               
-                        @Html.PagedListPager(Model.Blogs, number => Url.Action("Index", "Blog", new { number }))
-                    
-                @*<div class="pagination">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().AppUser.UserName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().DateTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.First().Title)
 
-                </th>
-            </tr>
-        </div>*@
+                @*@Html.PagedListPager(Model.Blogs, number => Url.Action("Index", "Blog", new { number }))*@
+
+                @*<div class="pagination">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.First().AppUser.UserName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.First().DateTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.First().Title)
+
+                            </th>
+                        </tr>
+                    </div>*@
             </div>
         </div>
     </div>

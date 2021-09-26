@@ -58,7 +58,7 @@ namespace EduHome.Areas.AdminPanel.Controllers
                 return View();
             }
             string FileName = Guid.NewGuid().ToString() + blog.Photo.FileName;
-            string ReslutPath = Path.Combine(_env.WebRootPath, "img", "slider", FileName);
+            string ReslutPath = Path.Combine(_env.WebRootPath, "img", "blog", FileName);
             using (FileStream fileStream = new FileStream(ReslutPath, FileMode.Create))
             {
                 await blog.Photo.CopyToAsync(fileStream);
@@ -80,8 +80,9 @@ namespace EduHome.Areas.AdminPanel.Controllers
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult Update(Blog blog, int? id)
+        public  IActionResult Update(Blog blog, int? id)
         {
+            
             //if (!ModelState.IsValid ) return View();
             if (ModelState["Title"].ValidationState == ModelValidationState.Invalid)
             {
@@ -95,11 +96,18 @@ namespace EduHome.Areas.AdminPanel.Controllers
             if (id != blog.Id) return BadRequest();
             var blogdb = _context.Blogs.FirstOrDefault(bl => bl.Id == id);
             if (blogdb == null) return NotFound();
+            string FileName = Guid.NewGuid().ToString() + blog.Photo.FileName;
+            string ReslutPath = Path.Combine(_env.WebRootPath, "img", "blog", FileName);
+            using (FileStream fileStream = new FileStream(ReslutPath, FileMode.Create))
+            {
+                 blog.Photo.CopyToAsync(fileStream);
+            }
+            blog.Image = FileName;
             blogdb.Image = blog.Image;
             blogdb.Title = blog.Title;
             blogdb.Content = blog.Content;
             blogdb.DateTime = blog.DateTime;
-           
+            _context.Blogs.Update(blogdb);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }

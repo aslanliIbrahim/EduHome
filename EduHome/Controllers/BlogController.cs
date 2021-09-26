@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//using X.Pagedlist;
 using PagedList.Mvc;
 using PagedList;
 
@@ -21,8 +22,8 @@ namespace EduHome.Controllers
         }
         public IActionResult Index(string search,int? i)
         {
-            List<Blog> blogs = _context.Blogs.Include(B=>B.AppUser).ThenInclude(b=>b.UserName).ToList();
-            return View(blogs.OrderByDescending(b=>b.Id).ToList().ToPagedList(i ?? 1,3));
+            List<Blog> blogs = _context.Blogs.ToList();
+            return View(blogs.OrderByDescending(b=>b.Id).ToList().ToPagedList(i ?? 1,9));
         }
         public async Task<IActionResult> Details(int? id)
         {
