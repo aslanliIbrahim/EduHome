@@ -23,6 +23,7 @@ namespace EduHome.Models
         public string AppUserId { get; set; }
         [NotMapped]
         public IFormFile Photo { get; set; }
-            
+        [Required,StringLength(maximumLength:255)]
+        public string Writer { get; set; }
     }
 }

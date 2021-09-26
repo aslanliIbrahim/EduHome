@@ -24,7 +24,9 @@ namespace EduHome.Controllers
                 Settings = _context.Settings.FirstOrDefault(),
                 about = _context.about.FirstOrDefault(),
                 Courses = _context.Courses.ToList(),
-                Blogs = _context.Blogs.Include(b=>b.AppUser).ToList()
+                Blogs = _context.Blogs.Include(b=>b.AppUser).ToList(),
+                Events = _context.Events.ToList(),
+                NoticeBoards = _context.NoticeBoards.ToList()
             };
             return View(homevm);
         }

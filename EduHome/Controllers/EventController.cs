@@ -33,7 +33,7 @@ namespace EduHome.Controllers
             EventVM eventVM = new EventVM
             {
                 Event = _context.Events.Include(m=>m.Spekears).FirstOrDefault(m=>m.Id == id),
-                Blogs = _context.Blogs.Include(b=>b.AppUser).OrderByDescending(b => b.Id).Take(3).ToList()
+                Blogs = _context.Blogs.OrderByDescending(b => b.Id).Take(3).ToList()
                 
             };
             //var post = await _context.Events.Include(e => e.Spekears).FirstOrDefaultAsync(ev=>ev.Id == id);

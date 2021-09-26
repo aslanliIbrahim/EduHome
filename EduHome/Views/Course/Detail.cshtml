@@ -123,7 +123,7 @@
                             @foreach (var item in Model.Blogs)
                             {
                                 <div class="single-post-img">
-                                    <a href="blog-details.html">
+                                    <a asp-action="Details" asp-controller="Blog">
                                         <img style="width:100px;" src="~/img/blog/@item.Image" alt="post">
                                         <div class="blog-hover">
                                             <i class="fa fa-link"></i>
@@ -132,7 +132,7 @@
                                 </div>
                                 <div class="single-post-content">
                                     <h4><a href="blog-details.html">@item.Title</a></h4>
-                                    <p>  /  @item.DateTime.ToString("MMM dd")</p>
+                                    <p> @item.Writer /  @item.DateTime.ToString("MMM dd")</p>
                                 </div>
                             }
                         </div>

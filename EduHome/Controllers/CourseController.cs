@@ -28,10 +28,10 @@ namespace EduHome.Controllers
         public IActionResult Detail(int? id)
         {
             if (id == null) return NotFound();
-            CourseVM courseVM = new CourseVM
+            CourseVM courseVM = new CourseVM    
             {
                 Course = _context.Courses.FirstOrDefault(c=>c.Id == id),
-                Blogs = _context.Blogs.Include(b=>b.AppUser).OrderByDescending(b => b.Id).Take(3).ToList()
+                Blogs = _context.Blogs.OrderByDescending(b => b.Id).Take(3).ToList()    
             };
 
             return View(courseVM);

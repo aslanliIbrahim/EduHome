@@ -8,8 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 //using X.Pagedlist;
-using PagedList.Mvc;
 using PagedList;
+using PagedList.Mvc;
+
 
 namespace EduHome.Controllers
 {
@@ -31,5 +32,6 @@ namespace EduHome.Controllers
             var post = await _context.Blogs.Include(p => p.AppUser).FirstOrDefaultAsync();
             return View(post);
         }
+
     }
 }
