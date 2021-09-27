@@ -126,7 +126,7 @@
                         {
                             <div class="single-post mb-30">
                                 <div class="single-post-img">
-                                    <a asp-action="Details" asp-controller="Blog">
+                                    <a asp-action="Details" asp-controller="Blog" asp-route-id="@item.Id">
                                         <img style="width:100px;" src="~/img/blog/@item.Image" alt="post">
                                         <div class="blog-hover">
                                             <i class="fa fa-link"></i>

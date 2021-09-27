@@ -98,35 +98,62 @@
                     </div>
                     <div class="single-blog-widget mb-47">
                         <h3>latest post</h3>
-                        @*@foreach (var item in )
-                        {
-                            <div class="single-post mb-30">
-                                <div class="single-post-img">
-                                    <a asp-action="Details" asp-controller="Blog">
-                                        <img style="width:100px;" src="~/img/blog/@item.Image" alt="post">
-                                        <div class="blog-hover">
-                                            <i class="fa fa-link"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="single-post-content">
-                                    <h4><a href="blog-details.html">@item.Title</a></h4>
-                                    <p> /  @item.DateTime.ToString("MMM dd")</p>
-                                </div>
+
+                        <div class="single-post mb-30">
+                            <div class="single-post-img">
+                                <a asp-action="details" asp-controller="blog" asp-route-id="@Model.Id">
+                                    <img style="width:100px;" src="~/img/blog/@Model.Image" alt="post">
+                                    <div class="blog-hover">
+                                        <i class="fa fa-link"></i>
+                                    </div>
+                                </a>
                             </div>
-                        }*@
+                            <div class="single-post-content">
+                                <h4><a href="blog-details.html">@Model.Title</a></h4>
+                                <p> /  @Model.DateTime.ToString("mmm dd")</p>
+                            </div>
+                        </div>
+                        <div class="single-post mb-30">
+                            <div class="single-post-img">
+                                <a asp-action="details" asp-controller="blog" asp-route-id="@Model.Id">
+                                    <img style="width:100px;" src="~/img/blog/@Model.Image" alt="post">
+                                    <div class="blog-hover">
+                                        <i class="fa fa-link"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-post-content">
+                                <h4><a href="blog-details.html">@Model.Title</a></h4>
+                                <p> /  @Model.DateTime.ToString("mmm dd")</p>
+                            </div>
+                        </div>
+                        <div class="single-post mb-30">
+                            <div class="single-post-img">
+                                <a asp-action="details" asp-controller="blog" asp-route-id="@Model.Id">
+                                    <img style="width:100px;" src="~/img/blog/@Model.Image" alt="post">
+                                    <div class="blog-hover">
+                                        <i class="fa fa-link"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-post-content">
+                                <h4><a href="blog-details.html">@Model.Title</a></h4>
+                                <p> /  @Model.DateTime.ToString("mmm dd")</p>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="single-blog-widget">
+                    @*<div class="single-blog-widget">
                         <h3>tags</h3>
                         <div class="single-tag">
-                            <a href="blog-details.html" class="mr-10 mb-10">course</a>
+                            <a asp-action="Index" asp-controller="Course" asp-route="@Model.Id" class="mr-10 mb-10">course</a>
                             <a href="blog-details.html" class="mr-10 mb-10">education</a>
                             <a href="blog-details.html" class="mb-10">teachers</a>
                             <a href="blog-details.html" class="mr-10">learning</a>
                             <a href="blog-details.html" class="mr-10">university</a>
                             <a href="blog-details.html">events</a>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
